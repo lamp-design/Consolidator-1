@@ -399,6 +399,7 @@ document.querySelectorAll('.tab').forEach(tab=>{
 
 document.getElementById('processBtn').addEventListener('click',async()=>{
   try{
+    if(window.refreshFaultClassifications) await window.refreshFaultClassifications();
     const repThresh=parseInt(document.getElementById('repThresh').value)||5;
     const remThresh=parseInt(document.getElementById('remThresh').value)||3;
     logHd(`===  START — Final excludes Normal — repThresh=${repThresh} ===`);
