@@ -29,5 +29,4 @@
       return true;
     }catch(e){console.warn('Live fault catalogue unavailable; embedded defaults remain active.',e);status('Offline · original catalogue active');return false;}
   };
-  document.addEventListener('DOMContentLoaded',()=>{const btn=document.getElementById('processBtn');if(btn)btn.addEventListener('click',()=>window.refreshFaultClassifications(),true);});
 })();
