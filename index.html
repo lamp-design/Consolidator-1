@@ -353,6 +353,8 @@ class FaultsConsolidator{
 // State
 const faultsManager=new FaultsToolManager(EMBEDDED_FAULTS_RAW);
 const stationManager=new StationMapManager(EMBEDDED_STATION_MAP);
+window.__consolidatorFaultsManager = faultsManager;
+window.__consolidatorEmbeddedFaults = EMBEDDED_FAULTS_RAW;
 const shmProcessor=new ShmHealthProcessor(stationManager);
 const state={units:[],shmStates:[],faultResult:null};
 
@@ -536,5 +538,9 @@ document.getElementById('downloadCombinedBtn').addEventListener('click',()=>{
   XLSX.writeFile(wb,'Combined Output.xlsx');log('Combined saved — Final excludes Normal','ok');
 });
 </script>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="./config.js"></script>
+<script src="./admin.js"></script>
 </body>
 </html>
